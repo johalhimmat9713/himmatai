@@ -5,7 +5,7 @@ from dotenv import load_dotenv  # Added to load your .env file
 from google import genai
 from google.genai import types
 from google.genai import errors
-
+#CAN YOU COMMIT?
 # Load the secret variables from your .env file
 load_dotenv()
 # Grab your key and save it to a variable called api_key

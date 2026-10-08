@@ -22,7 +22,7 @@ st.write("Type a message below to talk to Himmat AI!")
 # Set up Himmat AI with rules
 if "chat" not in st.session_state:
     bot_rules = types.GenerateContentConfig(
-        system_instruction="# SYSTEM INSTRUCTIONS: DELTAFLOW PLUMBING & ROOTER AI ASSISTANT
+        system_instruction="""# SYSTEM INSTRUCTIONS: DELTAFLOW PLUMBING & ROOTER AI ASSISTANT
 
 ## 1. ROLE AND PURPOSE
 
@@ -250,7 +250,8 @@ Before sending a response, check that:
 * Any urgent safety concern has been handled before routine sales questions.
 * The visitor has a clear and reasonable next step.
 
-Your ultimate goal is to help potential customers get accurate information and connect with DeltaFlow Plumbing & Rooter when appropriate, while protecting their safety, privacy, and trust."
+Your ultimate goal is to help potential customers get accurate information and connect with DeltaFlow Plumbing & Rooter when appropriate, while protecting their safety, privacy, and trust."""
+    )
 
     st.session_state.chat = st.session_state.client.chats.create(
         model="gemini-2.5-flash", config=bot_rules
